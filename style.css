@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css2?family=Maiden+Orange&display=swap");
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #191919;
+  color: #fff;
+  display: grid;
+  font-family: "Maiden Orange", serif;
+  font-weight: 400;
+  font-style: normal;
+  min-height: 100vh;
+  place-items: center;
+}
+
+.gameContainer {
+  aspect-ratio: 1;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: 50% 0%;
+  background-position-x: 50%;
+  background-position-y: 0%;
+  border-radius: 16px;
+  container-type: inline-size;
+  outline: 2px solid #fff;
+  overflow: hidden;
+  position: relative;
+  transition: all 1s;
+  width: 80vmin;
+}
+.gameContainer:has(#game:checked) {
+  animation: treeShake 0.1s 1.5s ease-in-out alternate 8;
+  background-size: 125%;
+  background-position-y: 100%;
+}
+@keyframes treeShake {
+  from {
+    background-position-x: 45%;
+  }
+  to {
+    background-position-x: 55%;
+  }
+}
+
+input[name=screen] {
+  display: none;
+}
+input[name=screen]#start:checked ~ .screen-start, input[name=screen]#info:checked ~ .screen-info, input[name=screen]#game:checked ~ .screen-game, input[name=screen]#end:checked ~ .screen-end {
+  opacity: 1;
+  pointer-events: revert;
+}
+input[name=screen]#game:checked ~ .screen-game .orange {
+  animation: orangeDrop 2.5s var(--delay, 0s) ease-in forwards var(--playState, running);
+}
+@keyframes orangeDrop {
+  to {
+    translate: var(--translateX, 10cqi) 60cqi;
+  }
+}
+input[name=screen]#info:checked ~ .screen-info:has(.button-label:checked) {
+  opacity: 0;
+}
+input[name=screen]#game:checked ~ .screen-end {
+  animation: screenEnd 0.4s 29.5s forwards;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
+@keyframes screenEnd {
+  to {
+    opacity: 1;
+    pointer-events: revert;
+  }
+}
+
+.screen {
+  align-content: center;
+  display: grid;
+  gap: 5cqi;
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+  place-items: center;
+  pointer-events: none;
+  transition: opacity 400ms;
+}
+.screen-start .orange:first-child {
+  translate: 23cqi -27cqi;
+  scale: 0.9;
+  animation: orangeDance 1s infinite alternate ease-in-out;
+}
+.screen-start .orange:nth-child(2) {
+  --translateX: 10cqi;
+  animation: orangeDrop 0.4s 1s ease-in forwards;
+  translate: var(--translateX) -60cqi;
+}
+.screen-start .orange:nth-child(3) {
+  --translateX: -35cqi;
+  animation: orangeDrop 0.4s 1.5s ease-in forwards;
+  translate: var(--translateX) -60cqi;
+}
+.screen-start .orange:last-child {
+  translate: -22cqi -12cqi;
+  rotate: -20deg;
+  animation: orangeDance 1s 0.6s infinite alternate ease-in-out;
+}
+@keyframes orangeDance {
+  from {
+    rotate: 25deg;
+  }
+  to {
+    rotate: -23deg;
+  }
+}
+.screen-info {
+  background-color: rgba(25, 25, 25, 0.6666666667);
+  padding: 10cqi;
+}
+.screen-info p {
+  font-size: 4.5cqi;
+}
+.screen-end {
+  background-color: rgba(255, 255, 255, 0.6666666667);
+  color: #000;
+  font-size: 5cqi;
+}
+
+h1 {
+  font-size: 12cqi;
+  text-shadow: 1cqi 1cqi 3cqi rgba(0, 0, 0, 0.8);
+  transform: skewY(-5deg);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 5cqi;
+}
+
+.button-label {
+  border: max(0.5cqi, 2px) solid hsla(34, 91%, 49%, 0.5);
+  border-radius: 16px;
+  box-shadow: 1cqi 1cqi 3cqi hsla(27, 95%, 25%, 0.8);
+  font-family: "Maiden Orange", serif;
+  font-size: 6cqi;
+  background-color: hsla(34, 91%, 49%, 0.5);
+  color: #fff;
+  padding: 0.8em 1.3em;
+  scale: 1;
+  transform: skewY(-5deg);
+  transition: scale 250ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.button-label:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.screen-info .button-label {
+  padding: 0.5em 1em;
+}
+
+.screen-end .button-label {
+  background-color: rgba(255, 68, 0, 0.8);
+  border-color: orangered;
+}
+
+.oranges {
+  position: absolute;
+  inset: 50%;
+}
+
+.orange {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: radial-gradient(circle at top, orange, maroon);
+  background-image: radial-gradient(circle at top, orange, hsl(24, 100%, 50%), maroon);
+  border-radius: 50%;
+  box-shadow: 0.25cqi 0.75cqi 2cqi rgba(85, 43, 3, 0.6);
+  inset: -5cqi;
+  position: absolute;
+}
+.orange::before, .orange::after {
+  aspect-ratio: 1;
+  background-image: radial-gradient(at top left, green, limegreen);
+  border-radius: 0 100%;
+  content: "";
+  left: 50%;
+  top: 10%;
+  transform-origin: top left;
+  position: absolute;
+  rotate: 170deg;
+  width: 40%;
+}
+.orange::after {
+  rotate: -90deg;
+}
+.orange[type=radio] {
+  rotate: var(--angle);
+  scale: var(--scale);
+  translate: var(--translateX) -60cqi;
+  transition: opacity 200ms;
+}
+.orange[type=radio]:nth-child(1) {
+  --angle: 9deg;
+  --delay: 3s;
+  --scale: 0.91;
+  --translateX: -1cqi;
+}
+.orange[type=radio]:nth-child(2) {
+  --angle: 11deg;
+  --delay: 4s;
+  --scale: 0.978;
+  --translateX: 37cqi;
+}
+.orange[type=radio]:nth-child(3) {
+  --angle: -9deg;
+  --delay: 5s;
+  --scale: 0.854;
+  --translateX: -33cqi;
+}
+.orange[type=radio]:nth-child(4) {
+  --angle: 5deg;
+  --delay: 6s;
+  --scale: 0.822;
+  --translateX: 20cqi;
+}
+.orange[type=radio]:nth-child(5) {
+  --angle: 2deg;
+  --delay: 7s;
+  --scale: 0.93;
+  --translateX: 40cqi;
+}
+.orange[type=radio]:nth-child(6) {
+  --angle: -6deg;
+  --delay: 8s;
+  --scale: 0.898;
+  --translateX: -4cqi;
+}
+.orange[type=radio]:nth-child(7) {
+  --angle: 4deg;
+  --delay: 9s;
+  --scale: 0.942;
+  --translateX: -31cqi;
+}
+.orange[type=radio]:nth-child(8) {
+  --angle: -28deg;
+  --delay: 10s;
+  --scale: 0.95;
+  --translateX: -31cqi;
+}
+.orange[type=radio]:nth-child(9) {
+  --angle: -22deg;
+  --delay: 11s;
+  --scale: 0.842;
+  --translateX: 8cqi;
+}
+.orange[type=radio]:nth-child(10) {
+  --angle: 23deg;
+  --delay: 12s;
+  --scale: 0.994;
+  --translateX: 34cqi;
+}
+.orange[type=radio]:nth-child(11) {
+  --angle: -28deg;
+  --delay: 13s;
+  --scale: 0.862;
+  --translateX: 9cqi;
+}
+.orange[type=radio]:nth-child(12) {
+  --angle: 19deg;
+  --delay: 14s;
+  --scale: 0.862;
+  --translateX: -26cqi;
+}
+.orange[type=radio]:nth-child(13) {
+  --angle: -26deg;
+  --delay: 15s;
+  --scale: 0.81;
+  --translateX: 15cqi;
+}
+.orange[type=radio]:nth-child(14) {
+  --angle: -24deg;
+  --delay: 16s;
+  --scale: 0.912;
+  --translateX: -6cqi;
+}
+.orange[type=radio]:nth-child(15) {
+  --angle: 10deg;
+  --delay: 17s;
+  --scale: 0.82;
+  --translateX: 39cqi;
+}
+.orange[type=radio]:nth-child(16) {
+  --angle: 8deg;
+  --delay: 18s;
+  --scale: 0.96;
+  --translateX: -33cqi;
+}
+.orange[type=radio]:nth-child(17) {
+  --angle: -9deg;
+  --delay: 19s;
+  --scale: 0.858;
+  --translateX: -38cqi;
+}
+.orange[type=radio]:nth-child(18) {
+  --angle: 21deg;
+  --delay: 20s;
+  --scale: 0.972;
+  --translateX: -6cqi;
+}
+.orange[type=radio]:nth-child(19) {
+  --angle: 22deg;
+  --delay: 21s;
+  --scale: 0.964;
+  --translateX: 28cqi;
+}
+.orange[type=radio]:nth-child(20) {
+  --angle: 24deg;
+  --delay: 22s;
+  --scale: 0.994;
+  --translateX: -39cqi;
+}
+.orange[type=radio]:nth-child(21) {
+  --angle: 6deg;
+  --delay: 23s;
+  --scale: 0.83;
+  --translateX: 9cqi;
+}
+.orange[type=radio]:nth-child(22) {
+  --angle: -5deg;
+  --delay: 24s;
+  --scale: 0.84;
+  --translateX: 37cqi;
+}
+.orange[type=radio]:nth-child(23) {
+  --angle: 12deg;
+  --delay: 25s;
+  --scale: 0.902;
+  --translateX: -21cqi;
+}
+.orange[type=radio]:nth-child(24) {
+  --angle: 4deg;
+  --delay: 26s;
+  --scale: 0.98;
+  --translateX: 29cqi;
+}
+.orange[type=radio]:nth-child(25) {
+  --angle: -4deg;
+  --delay: 27s;
+  --scale: 0.99;
+  --translateX: 23cqi;
+}
+.orange[type=radio]:nth-child(26) {
+  --angle: 15deg;
+  --delay: 28s;
+  --scale: 0.872;
+  --translateX: 34cqi;
+}
+.orange[type=radio]:nth-child(27) {
+  --angle: 16deg;
+  --delay: 29s;
+  --scale: 0.99;
+  --translateX: 24cqi;
+}
+.orange[type=radio]:nth-child(28) {
+  --angle: 23deg;
+  --delay: 30s;
+  --scale: 0.906;
+  --translateX: 15cqi;
+}
+.orange[type=radio]:nth-child(29) {
+  --angle: 9deg;
+  --delay: 31s;
+  --scale: 0.88;
+  --translateX: 5cqi;
+}
+.orange[type=radio]:nth-child(30) {
+  --angle: -12deg;
+  --delay: 32s;
+  --scale: 0.804;
+  --translateX: 30cqi;
+}
+.orange[type=radio]:hover {
+  box-shadow: 0 1cqi 3cqi rgba(85, 43, 3, 0.6);
+  cursor: pointer;
+}
+#game:checked ~ .screen-game .orange[type=radio]:checked {
+  --playState: paused;
+  background-color: #fff;
+  background-image: unset;
+  box-shadow: unset;
+  -webkit-mask: url("pop.svg") no-repeat center;
+  mask: url("pop.svg") no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  opacity: 0;
+  transform: translateY(-25%);
+}
+.orange[type=radio]:checked::before, .orange[type=radio]:checked::after {
+  background-image: revert;
+}/*# sourceMappingURL=style.css.map */

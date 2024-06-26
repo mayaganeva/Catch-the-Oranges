@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<form class="gameContainer">
+		<input type="radio" name="screen" id="start" checked>
+		<input type="radio" name="screen" id="info">
+		<input type="radio" name="screen" id="game">
+
+		<div class="screen screen-start">
+			<div class="oranges">
+				<div class="orange"></div>
+				<div class="orange"></div>
+				<div class="orange"></div>
+				<div class="orange"></div>
+			</div>
+			<h1>Catch the oranges!</h1>
+			<div class="buttons">
+				<label for="game" class="button-label">
+					Start Game
+				</label>
+				<label for="info" class="button-label">
+					Info
+				</label>
+			</div>
+		</div>
+
+		<div class="screen screen-info">
+			<h1>Orange Info</h1>
+			<p>An orange, also called sweet orange to distinguish it from the bitter orange (Citrus × aurantium), is the fruit of a tree in the family Rutaceae. Botanically, this is the hybrid Citrus × sinensis, between the pomelo (Citrus maxima) and the mandarin orange (Citrus reticulata). The chloroplast genome, and therefore the maternal line, is that of pomelo. The sweet orange has had its full genome sequenced.</p>
+			<button type="reset" class="button-label">Back</button>
+		</div>
+
+		<div class="screen screen-game">
+			<div class="oranges">
+				<input type="radio" class="orange"></input>
+				<!-- Checkboxes can be unchecked and radio buttons cannot if they're not tied to other radio buttons -->
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+				<input type="radio" class="orange">
+			</div>
+		</div>
+		<div class="screen screen-end">
+			<button type="reset" class="button-label">
+				Restart Game
+			</button>
+		</div>
+	</div>
+</body>
+</html>
