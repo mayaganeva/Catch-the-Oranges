@@ -100,19 +100,24 @@ input[name="screen"] {
 			animation: orangeDance 1s infinite alternate ease-in-out;
 		}
 		.orange:nth-child(2) {
-			--translateX: 10cqi;
-			animation: orangeDrop .4s 1s ease-in forwards;
-			translate: var(--translateX) -60cqi;
-		}
-		.orange:nth-child(3) {
-			--translateX: -35cqi;
-			animation: orangeDrop .4s 1.5s ease-in forwards;
-			translate: var(--translateX) -60cqi;
-		}
-		.orange:last-child {
 			translate: -22cqi -12cqi;
 			rotate: -20deg;
 			animation: orangeDance 1s .6s infinite alternate ease-in-out;
+		}
+		.orange:nth-child(n + 3) {
+			animation: orangeDrop .4s 1s ease-in;
+			translate: var(--translateX) -60cqi;
+		}
+		.orange:nth-child(3) {
+			--translateX: 10cqi;
+		}
+		.orange:nth-child(4) {
+			--translateX: -35cqi;
+			animation-delay: 1.5s;
+		}
+		.orange:nth-child(5) {
+			--translateX: 5cqi;
+			animation-delay: 2.5s;
 		}
 		@keyframes orangeDance {
 			from { rotate: 25deg; }

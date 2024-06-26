@@ -92,19 +92,24 @@ input[name=screen]#game:checked ~ .screen-end {
   animation: orangeDance 1s infinite alternate ease-in-out;
 }
 .screen-start .orange:nth-child(2) {
-  --translateX: 10cqi;
-  animation: orangeDrop 0.4s 1s ease-in forwards;
-  translate: var(--translateX) -60cqi;
-}
-.screen-start .orange:nth-child(3) {
-  --translateX: -35cqi;
-  animation: orangeDrop 0.4s 1.5s ease-in forwards;
-  translate: var(--translateX) -60cqi;
-}
-.screen-start .orange:last-child {
   translate: -22cqi -12cqi;
   rotate: -20deg;
   animation: orangeDance 1s 0.6s infinite alternate ease-in-out;
+}
+.screen-start .orange:nth-child(n+3) {
+  animation: orangeDrop 0.4s 1s ease-in;
+  translate: var(--translateX) -60cqi;
+}
+.screen-start .orange:nth-child(3) {
+  --translateX: 10cqi;
+}
+.screen-start .orange:nth-child(4) {
+  --translateX: -35cqi;
+  animation-delay: 1.5s;
+}
+.screen-start .orange:nth-child(5) {
+  --translateX: 5cqi;
+  animation-delay: 2.5s;
 }
 @keyframes orangeDance {
   from {
@@ -210,184 +215,184 @@ h1 {
   transition: opacity 200ms;
 }
 .orange[type=radio]:nth-child(1) {
-  --angle: 9deg;
+  --angle: 21deg;
   --delay: 3s;
-  --scale: 0.91;
-  --translateX: -1cqi;
+  --scale: 0.836;
+  --translateX: 18cqi;
 }
 .orange[type=radio]:nth-child(2) {
-  --angle: 11deg;
+  --angle: 20deg;
   --delay: 4s;
-  --scale: 0.978;
-  --translateX: 37cqi;
+  --scale: 0.818;
+  --translateX: -37cqi;
 }
 .orange[type=radio]:nth-child(3) {
-  --angle: -9deg;
+  --angle: 21deg;
   --delay: 5s;
-  --scale: 0.854;
-  --translateX: -33cqi;
+  --scale: 0.856;
+  --translateX: 18cqi;
 }
 .orange[type=radio]:nth-child(4) {
-  --angle: 5deg;
+  --angle: -9deg;
   --delay: 6s;
-  --scale: 0.822;
-  --translateX: 20cqi;
+  --scale: 0.838;
+  --translateX: -14cqi;
 }
 .orange[type=radio]:nth-child(5) {
-  --angle: 2deg;
+  --angle: 9deg;
   --delay: 7s;
-  --scale: 0.93;
-  --translateX: 40cqi;
+  --scale: 0.848;
+  --translateX: -37cqi;
 }
 .orange[type=radio]:nth-child(6) {
-  --angle: -6deg;
+  --angle: -3deg;
   --delay: 8s;
-  --scale: 0.898;
-  --translateX: -4cqi;
+  --scale: 0.988;
+  --translateX: -28cqi;
 }
 .orange[type=radio]:nth-child(7) {
-  --angle: 4deg;
+  --angle: 21deg;
   --delay: 9s;
-  --scale: 0.942;
-  --translateX: -31cqi;
+  --scale: 0.878;
+  --translateX: -24cqi;
 }
 .orange[type=radio]:nth-child(8) {
-  --angle: -28deg;
+  --angle: 20deg;
   --delay: 10s;
-  --scale: 0.95;
-  --translateX: -31cqi;
+  --scale: 0.922;
+  --translateX: -15cqi;
 }
 .orange[type=radio]:nth-child(9) {
-  --angle: -22deg;
+  --angle: 2deg;
   --delay: 11s;
-  --scale: 0.842;
-  --translateX: 8cqi;
+  --scale: 0.87;
+  --translateX: 35cqi;
 }
 .orange[type=radio]:nth-child(10) {
-  --angle: 23deg;
+  --angle: 30deg;
   --delay: 12s;
-  --scale: 0.994;
-  --translateX: 34cqi;
+  --scale: 0.97;
+  --translateX: 17cqi;
 }
 .orange[type=radio]:nth-child(11) {
-  --angle: -28deg;
+  --angle: -3deg;
   --delay: 13s;
-  --scale: 0.862;
-  --translateX: 9cqi;
+  --scale: 0.93;
+  --translateX: -19cqi;
 }
 .orange[type=radio]:nth-child(12) {
-  --angle: 19deg;
+  --angle: -24deg;
   --delay: 14s;
-  --scale: 0.862;
-  --translateX: -26cqi;
+  --scale: 0.91;
+  --translateX: 16cqi;
 }
 .orange[type=radio]:nth-child(13) {
   --angle: -26deg;
   --delay: 15s;
-  --scale: 0.81;
-  --translateX: 15cqi;
+  --scale: 0.858;
+  --translateX: -8cqi;
 }
 .orange[type=radio]:nth-child(14) {
-  --angle: -24deg;
+  --angle: 7deg;
   --delay: 16s;
-  --scale: 0.912;
-  --translateX: -6cqi;
-}
-.orange[type=radio]:nth-child(15) {
-  --angle: 10deg;
-  --delay: 17s;
-  --scale: 0.82;
-  --translateX: 39cqi;
-}
-.orange[type=radio]:nth-child(16) {
-  --angle: 8deg;
-  --delay: 18s;
-  --scale: 0.96;
-  --translateX: -33cqi;
-}
-.orange[type=radio]:nth-child(17) {
-  --angle: -9deg;
-  --delay: 19s;
-  --scale: 0.858;
-  --translateX: -38cqi;
-}
-.orange[type=radio]:nth-child(18) {
-  --angle: 21deg;
-  --delay: 20s;
-  --scale: 0.972;
-  --translateX: -6cqi;
-}
-.orange[type=radio]:nth-child(19) {
-  --angle: 22deg;
-  --delay: 21s;
-  --scale: 0.964;
-  --translateX: 28cqi;
-}
-.orange[type=radio]:nth-child(20) {
-  --angle: 24deg;
-  --delay: 22s;
-  --scale: 0.994;
-  --translateX: -39cqi;
-}
-.orange[type=radio]:nth-child(21) {
-  --angle: 6deg;
-  --delay: 23s;
-  --scale: 0.83;
-  --translateX: 9cqi;
-}
-.orange[type=radio]:nth-child(22) {
-  --angle: -5deg;
-  --delay: 24s;
-  --scale: 0.84;
+  --scale: 0.85;
   --translateX: 37cqi;
 }
-.orange[type=radio]:nth-child(23) {
-  --angle: 12deg;
-  --delay: 25s;
-  --scale: 0.902;
-  --translateX: -21cqi;
-}
-.orange[type=radio]:nth-child(24) {
-  --angle: 4deg;
-  --delay: 26s;
-  --scale: 0.98;
-  --translateX: 29cqi;
-}
-.orange[type=radio]:nth-child(25) {
-  --angle: -4deg;
-  --delay: 27s;
-  --scale: 0.99;
-  --translateX: 23cqi;
-}
-.orange[type=radio]:nth-child(26) {
+.orange[type=radio]:nth-child(15) {
   --angle: 15deg;
-  --delay: 28s;
-  --scale: 0.872;
+  --delay: 17s;
+  --scale: 0.91;
+  --translateX: -2cqi;
+}
+.orange[type=radio]:nth-child(16) {
+  --angle: -11deg;
+  --delay: 18s;
+  --scale: 0.818;
+  --translateX: 32cqi;
+}
+.orange[type=radio]:nth-child(17) {
+  --angle: 8deg;
+  --delay: 19s;
+  --scale: 0.968;
+  --translateX: 38cqi;
+}
+.orange[type=radio]:nth-child(18) {
+  --angle: -20deg;
+  --delay: 20s;
+  --scale: 0.98;
+  --translateX: 36cqi;
+}
+.orange[type=radio]:nth-child(19) {
+  --angle: 30deg;
+  --delay: 21s;
+  --scale: 0.856;
+  --translateX: -26cqi;
+}
+.orange[type=radio]:nth-child(20) {
+  --angle: 19deg;
+  --delay: 22s;
+  --scale: 0.99;
+  --translateX: -17cqi;
+}
+.orange[type=radio]:nth-child(21) {
+  --angle: 27deg;
+  --delay: 23s;
+  --scale: 0.854;
+  --translateX: -12cqi;
+}
+.orange[type=radio]:nth-child(22) {
+  --angle: -26deg;
+  --delay: 24s;
+  --scale: 0.964;
   --translateX: 34cqi;
 }
+.orange[type=radio]:nth-child(23) {
+  --angle: 19deg;
+  --delay: 25s;
+  --scale: 0.968;
+  --translateX: -13cqi;
+}
+.orange[type=radio]:nth-child(24) {
+  --angle: 26deg;
+  --delay: 26s;
+  --scale: 0.85;
+  --translateX: 1cqi;
+}
+.orange[type=radio]:nth-child(25) {
+  --angle: 14deg;
+  --delay: 27s;
+  --scale: 0.904;
+  --translateX: 21cqi;
+}
+.orange[type=radio]:nth-child(26) {
+  --angle: 19deg;
+  --delay: 28s;
+  --scale: 0.928;
+  --translateX: -11cqi;
+}
 .orange[type=radio]:nth-child(27) {
-  --angle: 16deg;
+  --angle: -21deg;
   --delay: 29s;
-  --scale: 0.99;
-  --translateX: 24cqi;
+  --scale: 0.844;
+  --translateX: -16cqi;
 }
 .orange[type=radio]:nth-child(28) {
-  --angle: 23deg;
+  --angle: -17deg;
   --delay: 30s;
-  --scale: 0.906;
-  --translateX: 15cqi;
+  --scale: 0.938;
+  --translateX: -27cqi;
 }
 .orange[type=radio]:nth-child(29) {
-  --angle: 9deg;
+  --angle: -6deg;
   --delay: 31s;
-  --scale: 0.88;
-  --translateX: 5cqi;
+  --scale: 0.988;
+  --translateX: 8cqi;
 }
 .orange[type=radio]:nth-child(30) {
-  --angle: -12deg;
+  --angle: -24deg;
   --delay: 32s;
-  --scale: 0.804;
-  --translateX: 30cqi;
+  --scale: 0.862;
+  --translateX: 10cqi;
 }
 .orange[type=radio]:hover {
   box-shadow: 0 1cqi 3cqi rgba(85, 43, 3, 0.6);
