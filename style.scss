@@ -1,19 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Maiden+Orange&display=swap');
+:root {
+	--font: 400 4.5cqi 'Maiden Orange', serif;
+	
+	--fz-s: 	4.5cqi;
+	--fz-m: 	5.5cqi;
+	--fz-l: 	9cqi;
+	--fz-xl: 	12cqi;
+	
+	--fruit-r: 	5cqi;
+
+	--primary-darkest: 	#552b0399;
+	--primary-mid: 		darkorange;
+	--primary: 			orange;
+	--primary-o: 		#ef8c0b80;
+	--primary-light-o: 	#7c3a03cc;
+	
+	--secondary-dark: 	maroon;
+	--secondary: 		orangered;
+	--secondary-o: 		#ff4400cc;
+	--secondary-light: 	hsl(24, 100%, 50%);
+	
+	--tertiary-dark: 	darkgreen;
+	--tertiary-mid: 	green;
+	--tertiary: 		limegreen;
+	
+	--n-darkest: 		#191919;
+	--n-darkest-o: 		#191919aa;
+	--n-lightest-o:		#fffa;
+
+	--text-shadow:  1cqi 1cqi 3cqi var(--n-darkest-o);
+	--button-shadow: 1cqi 1cqi 3cqi var(--primary-light-o);
+	--fruit-shadow: .25cqi .75cqi 2cqi var(--primary-darkest);
+
+}
 *, ::before, ::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 body {
-	background-color: #191919;
+	background-color: var(--n-darkest);
 	color: #fff;
 	display: grid;
-	font-family: 'Maiden Orange', serif;
-	font-weight: 400;
+	font: var(--font);
 	font-style: normal;
 	min-height: 100vh;
 	place-items: center;
 }
+
 .gameContainer {
 	aspect-ratio: 1;
 	background-image: url("background.jpg");
@@ -23,13 +57,13 @@ body {
 	background-position-y: 0%;
 	border-radius: 16px;
 	container-type: inline-size;
-	// Now we can use container units
+	counter-reset: score;
+	// You can't use counter reset on a container, that's why we wrap everything inside the game in a form
 	outline: 2px solid #fff;
 	overflow: hidden;
 	position: relative;
 	transition: all 1s;
 	width: 80vmin;
-	// 90% of the ideal min width of viewport
 
 	&:has(#game:checked) {
 		animation: treeShake .1s 1.5s ease-in-out alternate 8;
@@ -44,9 +78,12 @@ body {
 		}
 	}
 }
+
+form {
+	counter-reset: score oranges apples;
+}
+
 input[name="screen"] {
-	// position: relative;
-	// z-index: 2;
 	display: none;
 	// Putting display: none; removes it from the DOM, but doesn't remove it from the CSS Object Model, so CSS treats them just as if they're in the DOM
 
@@ -57,17 +94,39 @@ input[name="screen"] {
 		opacity: 1;
 		pointer-events: revert;
 	}
+	
+	&#info:checked ~ .screen-info:has(.button-label:checked) {
+		opacity: 0;
+	}
 
-	&#game:checked ~ .screen-game .orange {
-		animation: orangeDrop 2.5s var(--delay, 0s) ease-in forwards var(--playState, running);
+	&#game:checked ~ .screen-game :where(.orange, .apple) {
+		animation: drop 2.5s var(--delay, 0s) ease-in forwards var(--playState, running);
 
-		@keyframes orangeDrop {
+		@keyframes drop {
 			to { translate: var(--translateX, 10cqi) 60cqi; }
 		}
 	}
 
-	&#info:checked ~ .screen-info:has(.button-label:checked) {
-		opacity: 0;
+	&#game:checked ~ .screen-game .apple {
+		animation-duration: 3s;
+	}
+
+	&#game:checked ~ .screen-game .gui {
+		animation: gui .5s 29.5s forwards;
+
+		@keyframes gui {
+			to { translate: 0 100%; }
+		}
+
+		.timer span::before {
+			animation: countdown 100s -70s step-end;
+			// With a negative delay, the animation starts as if it were 70s in, so directly to 2 1
+			// We want an animation that's 30s long, so we make it 100s long with a -70s delay which leaves 30s duration
+		}
+
+		.timer span::after {
+			animation: countdown 10s 3 step-end;
+		}
 	}
 
 	&#game:checked ~ .screen-end {
@@ -82,6 +141,7 @@ input[name="screen"] {
 		}
 	}
 }
+
 .screen {
 	align-content: center;
 	display: grid;
@@ -125,83 +185,124 @@ input[name="screen"] {
 		}
 	}
 	&-info {
-		background-color: #191919aa;
+		background-color: var(--n-darkest-o);
 		padding: 10cqi;
 	}
 	&-info p {
-		font-size: 4.5cqi;
+		font-size: var(--fz-s);
 	}
 	&-end {
-		background-color: #fffa;
-		color: #000;
-		font-size: 5cqi;
+		background-color: var(--n-lightest-o);
+		color: var(--n-darkest);
+		font-size: var(--fz-m);
+		text-align: center;
+
+		p:first-child {
+			font-size: var(--fz-xl);
+		}
+
+		p:last-child {
+			font-size: var(--fz-l);
+		}
+
+		p:first-child,
+		p.bad {
+			margin-bottom: 2cqi;
+		}
+
+		span {
+			color: var(--color);
+		}
+
+		.good {
+			--color: var(--primary-mid);
+
+			.result::after {
+				content: counter(oranges);
+			}
+		}
+
+		.bad {
+			--color: var(--tertiary-dark);
+
+			.result::after {
+				content: counter(apples);
+			}
+		}
+		
+		.total {
+			--color: var(--secondary);
+
+			.result::after {
+				content: counter(score);
+			}
+		}
 	}
 }
+
 h1 {
-	font-size: 12cqi;
-	text-shadow: 1cqi 1cqi 3cqi #000c;
+	font-size: var(--fz-xl);
+	letter-spacing: .1cqi;
+	text-shadow: var(--text-shadow);
 	// Use the same units thatyou use on the game container for everything else
 	transform: skewY(-5deg);
 	user-select: none;
 }
+
 .buttons {
 	display: flex;
 	gap: 5cqi;
 }
+
 .button-label {
-	border: max(.5cqi, 2px) solid hsla(34, 91%, 49%, 0.5);
-	border-radius: 16px;
-	box-shadow: 1cqi 1cqi 3cqi hsla(27, 95%, 25%, 0.8);
+	border: max(.5cqi, 2px) solid var(--primary-o);
+	border-radius: 2cqi;
+	box-shadow: var(--button-shadow);
 	// He wouldnt set it at just .5cqi so the border doesn't become too thin
 	// 1cqi is 1% of the container width
-	font-family: 'Maiden Orange', serif;
-	font-size: 6cqi;
-	background-color: hsla(34, 91%, 49%, 0.5);
+	font-family: var(--ff-base);
+	font-size: var(--fz-m);
+	background-color: var(--primary-o);
 	color: #fff;
-	padding: .8em 1.3em;
+	padding: 4cqi 8cqi;
 	scale: 1;
 	transform: skewY(-5deg);
-	transition: scale 250ms ease;
+	transition: scale 200ms;
 	user-select: none;
 }
+
 .button-label:hover {
 	cursor: pointer;
 	scale: 1.1;
 }
+
 .screen-info .button-label {
-	padding: .5em 1em;
+	padding: 3cqi 7cqi;
 }
+
 .screen-end .button-label {
-	background-color: rgba(255, 68, 0, 0.8);
-	border-color: orangered;
+	background-color: var(--secondary-o);
+	border-color: var(--secondary);
 }
-.oranges {
+
+.oranges,
+.apples {
 	position: absolute;
 	inset: 50%;
 	// In the middle of the screen
 }
-.orange {
+.orange, .apple {
 	appearance: none;
 	// Resets appearance of radio to an empty div
-	background-image: radial-gradient(circle at top, orange, maroon);
-	background-image: radial-gradient(
-		circle at top,
-		orange,
-		hsl(24, 100%, 50%),
-		maroon
-		);
-	border-radius: 50%;
-	box-shadow: .25cqi .75cqi 2cqi rgba(85, 43, 3, .6);
-	inset: -5cqi;
-	// It's going outside, outset of 5cqi, so total width is 10cqi, 5 in each direction
+	box-shadow: var(--fruit-shadow);
 	position: absolute;
 
 	&::before, &::after {
 		aspect-ratio: 1;
 		background-image: radial-gradient(
 			at top left,
-			green,
-			limegreen
+			var(--tertiary-mid),
+			var(--tertiary)
 		);
 		border-radius: 0 100%;
 		content: '';
@@ -223,21 +324,7 @@ h1 {
 		translate: var(--translateX) -60cqi;
 		transition: opacity 200ms;
 
-		@for $o from 1 through 30 {
-			&:nth-child(#{$o}) {
-				// Sass variables are "meant" to be used as value only; In order to use them elsewhere, we need to use interpolation
-				--angle: #{random(60) - 30}deg;
-				// You HAVE TO use interpolation when using custom properties with Sass
-				--delay: #{$o + 2}s;
-				--scale: #{random(100) / 500 + 0.8};
-				// 100 / 100 gives a number between 0 1 and 100 / 500 gives a number from 0 to 0.2 + 0.8 to get 1
-				--translateX: #{random(80) - 40}cqi;
-				// Getting a random number between -40 to 40
-			}
-		}
-
 		&:hover {
-			box-shadow: 0 1cqi 3cqi rgba(85, 43, 3, .6);
 			cursor: pointer;
 		}
 
@@ -247,9 +334,11 @@ h1 {
 			background-color: #fff;
 			background-image: unset;
 			box-shadow: unset;
+			counter-increment: score oranges;
 			-webkit-mask: url('pop.svg') no-repeat center;
 			mask: url('pop.svg') no-repeat center;
 			-webkit-mask-size: contain;
+			// Preload the images!
 			mask-size: contain;
 			opacity: 0;
 			transform: translateY(-25%);
@@ -262,3 +351,93 @@ h1 {
 		}
 	}
 }
+.orange {
+	background-image: radial-gradient(
+		circle at top,
+		var(--primary),
+		var(--secondary-light),
+		var(--secondary-dark)
+		);
+	border-radius: 50%;
+	inset: calc(-1 * var(--fruit-r));
+	// It's going outside, outset of 5cqi, so total width is 10cqi, 5 in each direction
+
+	@for $o from 1 through 30 {
+		&[type="radio"]:nth-child(#{$o}) {
+			// Sass variables are "meant" to be used as value only; In order to use them elsewhere, we need to use interpolation
+			--angle: #{random(60) - 30}deg;
+			// You HAVE TO use interpolation when using custom properties with Sass
+			--delay: #{$o + 2}s;
+			--scale: #{random(100) / 500 + 0.8};
+			// 100 / 100 gives a number between 0 1 and 100 / 500 gives a number from 0 to 0.2 + 0.8 to get 1
+			--translateX: #{random(80) - 40}cqi;
+			// Getting a random number between -40 to 40
+		}
+	}
+}
+
+.apple {
+	background-image: radial-gradient(
+		circle at top,
+		var(--tertiary),
+		var(--tertiary-dark)
+		);
+	border-radius: 52% 48% 48% 52% / 28% 31% 69% 72%;
+	inset: -5cqi;
+
+	@for $o from 1 through 20 {
+		&[type="radio"]:nth-child(#{$o}) {
+			--angle: #{random(60) - 30}deg;
+			--delay: #{$o * 1.25 + 3}s;
+			--scale: #{random(100) / 500 + 0.8};
+			--translateX: #{random(80) - 40}cqi;
+		}
+	}
+}
+
+.gui {
+	bottom: 0;
+	display: flex;
+	font-size: var(--fz-l);
+	justify-content: space-between;
+	padding: 1cqi 3cqi;
+	pointer-events: none;
+	position: absolute;
+	text-shadow: var(--text-shadow);
+	user-select: none;
+	width: 100%;
+}
+
+.timer span {
+	&::before {
+		content: '2';
+		// You can't set the content as a number, it must be a string
+	}
+
+	&::after {
+		content: '6';
+	}
+
+	@keyframes countdown {
+		0% { content: '9'; }
+		10% { content: '8'; }
+		20% { content: '7'; }
+		30% { content: '6'; }
+		40% { content: '5'; }
+		50% { content: '4'; }
+		60% { content: '3'; }
+		70% { content: '2'; }
+		80% { content: '1'; }
+		90% { content: '0'; }
+	}
+}
+
+.score::after {
+	content: counter(score);
+}
+
+// pointer-events: none;
+// opacity: 0;
+// works just like
+// display: none;
+// for our purposes - hide the screen and prevent users from clicking on buttons
