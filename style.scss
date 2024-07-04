@@ -61,6 +61,7 @@ body::after {
 }
 
 .gameContainer {
+	animation: open 3s forwards;
 	aspect-ratio: 1;
 	background-image: url("background.jpg");
 	background-size: cover;
@@ -69,11 +70,16 @@ body::after {
 	background-position-y: 0%;
 	border-radius: 16px;
 	container-type: inline-size;
+	opacity: 0;
 	outline: 2px solid #fff;
 	overflow: hidden;
 	position: relative;
 	transition: all 1s;
 	width: 80vmin;
+
+	@keyframes open {
+		to { opacity: 1; }
+	}
 
 	&:has(#game:checked) {
 		animation: treeShake .1s 1.5s ease-in-out alternate 8;
@@ -279,7 +285,6 @@ h1 {
 	border: max(.5cqi, 2px) solid var(--primary-o);
 	border-radius: 2cqi;
 	box-shadow: var(--button-shadow);
-	// 1cqi is 1% of the container width
 	font-family: var(--ff-base);
 	font-size: var(--fz-m);
 	background-color: var(--primary-o);
@@ -314,7 +319,6 @@ h1 {
 .orange, .apple {
 	--popTime: 0s;
 	appearance: none;
-	// Resets appearance of radio to an empty div
 	box-shadow: var(--fruit-shadow);
 	position: absolute;
 
