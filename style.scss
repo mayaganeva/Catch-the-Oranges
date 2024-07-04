@@ -18,7 +18,7 @@
 	--secondary-dark: 	maroon;
 	--secondary: 		orangered;
 	--secondary-o: 		#ff4400cc;
-	--secondary-light: 	hsl(24, 100%, 50%);
+	--secondary-light: 	#ff6600;
 	
 	--tertiary-dark: 	darkgreen;
 	--tertiary-mid: 	green;
@@ -33,11 +33,13 @@
 	--fruit-shadow: .25cqi .75cqi 2cqi var(--primary-darkest);
 
 }
+
 *, ::before, ::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
+
 body {
 	background-color: var(--n-darkest);
 	color: #fff;
@@ -46,6 +48,16 @@ body {
 	font-style: normal;
 	min-height: 100vh;
 	place-items: center;
+}
+
+body::after {
+	content: url('pop.svg');
+	// Pre-loads images
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	z-index: -1;
 }
 
 .gameContainer {
@@ -57,8 +69,6 @@ body {
 	background-position-y: 0%;
 	border-radius: 16px;
 	container-type: inline-size;
-	counter-reset: score;
-	// You can't use counter reset on a container, that's why we wrap everything inside the game in a form
 	outline: 2px solid #fff;
 	overflow: hidden;
 	position: relative;
@@ -81,6 +91,7 @@ body {
 
 form {
 	counter-reset: score oranges apples;
+	// You can't use counter reset on a container, that's why we wrap everything inside the game in a form
 }
 
 input[name="screen"] {
@@ -154,43 +165,53 @@ input[name="screen"] {
 	transition: opacity 400ms;
 
 	&-start {
+		
 		.orange:first-child {
 			translate: 23cqi -27cqi;
 			scale: .9;
-			animation: orangeDance 1s infinite alternate ease-in-out;
+			animation: dance 1s infinite alternate ease-in-out;
 		}
+
 		.orange:nth-child(2) {
 			translate: -22cqi -12cqi;
 			rotate: -20deg;
-			animation: orangeDance 1s .6s infinite alternate ease-in-out;
+			animation: dance 1s .6s infinite alternate ease-in-out;
 		}
+
 		.orange:nth-child(n + 3) {
-			animation: orangeDrop .4s 1s ease-in;
+			animation: drop .4s 1s ease-in;
 			translate: var(--translateX) -60cqi;
 		}
+
 		.orange:nth-child(3) {
 			--translateX: 10cqi;
 		}
+
 		.orange:nth-child(4) {
 			--translateX: -35cqi;
 			animation-delay: 1.5s;
 		}
+
 		.orange:nth-child(5) {
 			--translateX: 5cqi;
 			animation-delay: 2.5s;
 		}
-		@keyframes orangeDance {
+
+		@keyframes dance {
 			from { rotate: 25deg; }
 			to { rotate: -23deg; }
 		}
 	}
+
 	&-info {
 		background-color: var(--n-darkest-o);
 		padding: 10cqi;
 	}
+
 	&-info p {
 		font-size: var(--fz-s);
 	}
+
 	&-end {
 		background-color: var(--n-lightest-o);
 		color: var(--n-darkest);
@@ -258,7 +279,6 @@ h1 {
 	border: max(.5cqi, 2px) solid var(--primary-o);
 	border-radius: 2cqi;
 	box-shadow: var(--button-shadow);
-	// He wouldnt set it at just .5cqi so the border doesn't become too thin
 	// 1cqi is 1% of the container width
 	font-family: var(--ff-base);
 	font-size: var(--fz-m);
@@ -285,12 +305,12 @@ h1 {
 	border-color: var(--secondary);
 }
 
-.oranges,
-.apples {
+.oranges, .apples {
 	position: absolute;
 	inset: 50%;
 	// In the middle of the screen
 }
+
 .orange, .apple {
 	appearance: none;
 	// Resets appearance of radio to an empty div
@@ -312,6 +332,9 @@ h1 {
 		position: absolute;
 		rotate: 170deg;
 		width: 40%;
+
+		transition: rotate calc(var(--popTime) * 0.5) ease-out;
+    	transition-delay: calc(var(--popTime) * 0.5);
 	}
 
 	&::after {
@@ -334,7 +357,6 @@ h1 {
 			background-color: #fff;
 			background-image: unset;
 			box-shadow: unset;
-			counter-increment: score oranges;
 			-webkit-mask: url('pop.svg') no-repeat center;
 			mask: url('pop.svg') no-repeat center;
 			-webkit-mask-size: contain;
@@ -345,12 +367,41 @@ h1 {
 			// Happens after the original transform is finished
 		}
 
-		&:checked::before,
-		&:checked::after {
-			background-image: revert;
+		&:checked {
+			box-shadow: 0 0 0 transparent;
+
+			&::before,
+			&::after {
+				animation: leafFall 3s var(--popTime) forwards ease-out;
+				// background-image: revert;
+			}
+
+			&::before {
+				--_leafY: var(--beforeLeafY);
+				--_leafXGoal: calc(-20% * var(--beforeLeafX));
+			  }
+
+			&::after {
+				--_leafY: var(--afterLeafY);
+				--_leafXGoal: calc(20% * var(--afterLeafX));
+			}
+
+			@keyframes leafFall {
+				10% {
+				  top: calc(-10% * var(--_leafY));
+				  rotate: 360deg;
+				}
+		  
+				100% {
+				  top: 100cqi;
+				  left: var(--_leafXGoal);
+				  rotate: 720deg;
+				}
+			}
 		}
 	}
 }
+
 .orange {
 	background-image: radial-gradient(
 		circle at top,
@@ -362,7 +413,7 @@ h1 {
 	inset: calc(-1 * var(--fruit-r));
 	// It's going outside, outset of 5cqi, so total width is 10cqi, 5 in each direction
 
-	@for $o from 1 through 30 {
+	@for $o from 1 through 35 {
 		&[type="radio"]:nth-child(#{$o}) {
 			// Sass variables are "meant" to be used as value only; In order to use them elsewhere, we need to use interpolation
 			--angle: #{random(60) - 30}deg;
@@ -372,7 +423,16 @@ h1 {
 			// 100 / 100 gives a number between 0 1 and 100 / 500 gives a number from 0 to 0.2 + 0.8 to get 1
 			--translateX: #{random(80) - 40}cqi;
 			// Getting a random number between -40 to 40
+
+			--beforeLeafX: #{random(30) + 20};
+			--beforeLeafY: #{random(50)};
+			--afterLeafX: #{random(30) + 20};
+			--afterLeafY: #{random(50)};
 		}
+	}
+
+	&:checked {
+		counter-increment: score oranges;
 	}
 }
 
@@ -391,7 +451,16 @@ h1 {
 			--delay: #{$o * 1.25 + 3}s;
 			--scale: #{random(100) / 500 + 0.8};
 			--translateX: #{random(80) - 40}cqi;
+
+			--beforeLeafX: #{random(30) + 20};
+			--beforeLeafY: #{random(50)};
+			--afterLeafX: #{random(30) + 20};
+			--afterLeafY: #{random(50)};
 		}
+	}
+
+	&:checked {
+		counter-increment: score -2 apples;
 	}
 }
 
@@ -435,6 +504,10 @@ h1 {
 .score::after {
 	content: counter(score);
 }
+
+// Animations
+
+
 
 // pointer-events: none;
 // opacity: 0;
