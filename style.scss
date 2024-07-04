@@ -70,7 +70,7 @@ body::after {
 	border-radius: 16px;
 	container-type: inline-size;
 	outline: 2px solid #fff;
-	overflow: hidden;
+	// overflow: hidden;
 	position: relative;
 	transition: all 1s;
 	width: 80vmin;
@@ -312,6 +312,7 @@ h1 {
 }
 
 .orange, .apple {
+	--popTime: 0s;
 	appearance: none;
 	// Resets appearance of radio to an empty div
 	box-shadow: var(--fruit-shadow);
@@ -354,47 +355,47 @@ h1 {
 		#game:checked ~ .screen-game &:checked {
 			--playState: paused;
 			// Firefox doesn't like when you change custom properties? Check that
-			background-color: #fff;
+			// background-color: #fff;
 			background-image: unset;
 			box-shadow: unset;
-			-webkit-mask: url('pop.svg') no-repeat center;
-			mask: url('pop.svg') no-repeat center;
-			-webkit-mask-size: contain;
+			// -webkit-mask: url('pop.svg') no-repeat center;
+			// mask: url('pop.svg') no-repeat center;
+			// -webkit-mask-size: contain;
 			// Preload the images!
 			mask-size: contain;
-			opacity: 0;
+			// opacity: 0;
 			transform: translateY(-25%);
 			// Happens after the original transform is finished
-		}
 
-		&:checked {
-			box-shadow: 0 0 0 transparent;
+			// box-shadow: 0 0 0 transparent;
 
 			&::before,
 			&::after {
-				animation: leafFall 3s var(--popTime) forwards ease-out;
+				animation: leafFall 3.5s var(--popTime) forwards ease-out;
 				// background-image: revert;
+				visibility: visible;
+				opacity: 1;
 			}
 
 			&::before {
-				--_leafY: var(--beforeLeafY);
-				--_leafXGoal: calc(-20% * var(--beforeLeafX));
+				--leafY: var(--beforeLeafY);
+				--leafX: calc(-20% * 20);
 			  }
 
 			&::after {
-				--_leafY: var(--afterLeafY);
-				--_leafXGoal: calc(20% * var(--afterLeafX));
+				--leafY: var(--afterLeafY);
+				--leafX: calc(20% * 25);
 			}
 
 			@keyframes leafFall {
 				10% {
-				  top: calc(-10% * var(--_leafY));
+				  top: calc(-10% * var(--leafY));
 				  rotate: 360deg;
 				}
 		  
 				100% {
 				  top: 100cqi;
-				  left: var(--_leafXGoal);
+				  left: var(--leafX);
 				  rotate: 720deg;
 				}
 			}
