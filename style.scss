@@ -24,14 +24,13 @@
 	--tertiary-mid: 	green;
 	--tertiary: 		limegreen;
 	
-	--n-darkest: 		#1c1d1b;
-	--n-darkest-o: 		#1c1d1baa;
+	--n-darkest: 		#191919;
+	--n-darkest-o: 		#191919aa;
 	--n-lightest-o:		#fffa;
 
 	--text-shadow:  1cqi 1cqi 3cqi var(--n-darkest-o);
 	--button-shadow: 1cqi 1cqi 3cqi var(--primary-light-o);
 	--fruit-shadow: .25cqi .75cqi 2cqi var(--primary-darkest);
-
 }
 
 *, ::before, ::after {
@@ -61,7 +60,6 @@ body::after {
 }
 
 .gameContainer {
-	animation: open 3s forwards;
 	aspect-ratio: 1;
 	background-image: url("background.jpg");
 	background-size: cover;
@@ -70,16 +68,11 @@ body::after {
 	background-position-y: 0%;
 	border-radius: 16px;
 	container-type: inline-size;
-	opacity: 0;
 	outline: 2px solid #fff;
 	overflow: hidden;
 	position: relative;
 	transition: all 1s;
 	width: 80vmin;
-
-	@keyframes open {
-		to { opacity: 1; }
-	}
 
 	&:has(#game:checked) {
 		animation: treeShake .1s 1.5s ease-in-out alternate 8;
@@ -96,8 +89,14 @@ body::after {
 }
 
 form {
+	animation: open 2.5s forwards;
 	counter-reset: score oranges apples;
 	// You can't use counter reset on a container, that's why we wrap everything inside the game in a form
+	opacity: 0;
+	
+	@keyframes open {
+		to { opacity: 1; }
+	}
 }
 
 input[name="screen"] {
