@@ -318,6 +318,7 @@ h1 {
 .orange, .apple {
 	--popTime: 0s;
 	appearance: none;
+	outline: 6px solid transparent;
 	box-shadow: var(--fruit-shadow);
 	position: absolute;
 

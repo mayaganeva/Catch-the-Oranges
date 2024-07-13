@@ -283,6 +283,7 @@ h1 {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  outline: 6px solid transparent;
   box-shadow: var(--fruit-shadow);
   position: absolute;
 }
@@ -355,354 +356,354 @@ h1 {
   inset: calc(-1 * var(--fruit-r));
 }
 .orange[type=radio]:nth-child(1) {
-  --angle: -17deg;
+  --angle: -26deg;
   --delay: 3s;
-  --scale: 0.832;
-  --translateX: -5cqi;
-  --beforeLeafX: 46;
-  --beforeLeafY: 40;
-  --afterLeafX: 48;
-  --afterLeafY: 45;
+  --scale: 0.972;
+  --translateX: -17cqi;
+  --beforeLeafX: 49;
+  --beforeLeafY: 33;
+  --afterLeafX: 29;
+  --afterLeafY: 29;
 }
 .orange[type=radio]:nth-child(2) {
-  --angle: 22deg;
+  --angle: 30deg;
   --delay: 4s;
-  --scale: 0.82;
-  --translateX: 39cqi;
-  --beforeLeafX: 23;
-  --beforeLeafY: 38;
-  --afterLeafX: 44;
-  --afterLeafY: 33;
+  --scale: 0.89;
+  --translateX: 20cqi;
+  --beforeLeafX: 30;
+  --beforeLeafY: 29;
+  --afterLeafX: 34;
+  --afterLeafY: 1;
 }
 .orange[type=radio]:nth-child(3) {
-  --angle: -17deg;
+  --angle: -5deg;
   --delay: 5s;
-  --scale: 0.924;
-  --translateX: -11cqi;
-  --beforeLeafX: 48;
-  --beforeLeafY: 43;
+  --scale: 0.852;
+  --translateX: 33cqi;
+  --beforeLeafX: 39;
+  --beforeLeafY: 29;
   --afterLeafX: 35;
-  --afterLeafY: 11;
+  --afterLeafY: 18;
 }
 .orange[type=radio]:nth-child(4) {
-  --angle: -13deg;
+  --angle: 3deg;
   --delay: 6s;
-  --scale: 0.882;
-  --translateX: -1cqi;
-  --beforeLeafX: 38;
-  --beforeLeafY: 29;
-  --afterLeafX: 42;
-  --afterLeafY: 46;
+  --scale: 0.82;
+  --translateX: 24cqi;
+  --beforeLeafX: 30;
+  --beforeLeafY: 38;
+  --afterLeafX: 33;
+  --afterLeafY: 36;
 }
 .orange[type=radio]:nth-child(5) {
-  --angle: -29deg;
+  --angle: 6deg;
   --delay: 7s;
-  --scale: 0.96;
-  --translateX: -13cqi;
-  --beforeLeafX: 43;
-  --beforeLeafY: 6;
-  --afterLeafX: 23;
-  --afterLeafY: 50;
+  --scale: 0.854;
+  --translateX: 2cqi;
+  --beforeLeafX: 22;
+  --beforeLeafY: 39;
+  --afterLeafX: 27;
+  --afterLeafY: 28;
 }
 .orange[type=radio]:nth-child(6) {
-  --angle: -9deg;
+  --angle: -12deg;
   --delay: 8s;
-  --scale: 0.828;
-  --translateX: -14cqi;
-  --beforeLeafX: 50;
-  --beforeLeafY: 11;
-  --afterLeafX: 50;
-  --afterLeafY: 11;
-}
-.orange[type=radio]:nth-child(7) {
-  --angle: -6deg;
-  --delay: 9s;
-  --scale: 0.932;
-  --translateX: -7cqi;
-  --beforeLeafX: 36;
-  --beforeLeafY: 49;
-  --afterLeafX: 33;
-  --afterLeafY: 11;
-}
-.orange[type=radio]:nth-child(8) {
-  --angle: -23deg;
-  --delay: 10s;
-  --scale: 0.814;
-  --translateX: 39cqi;
-  --beforeLeafX: 27;
-  --beforeLeafY: 42;
-  --afterLeafX: 46;
-  --afterLeafY: 20;
-}
-.orange[type=radio]:nth-child(9) {
-  --angle: 28deg;
-  --delay: 11s;
-  --scale: 0.844;
-  --translateX: -23cqi;
-  --beforeLeafX: 46;
-  --beforeLeafY: 14;
-  --afterLeafX: 28;
-  --afterLeafY: 23;
-}
-.orange[type=radio]:nth-child(10) {
-  --angle: 17deg;
-  --delay: 12s;
-  --scale: 0.98;
-  --translateX: -20cqi;
-  --beforeLeafX: 23;
-  --beforeLeafY: 17;
-  --afterLeafX: 25;
-  --afterLeafY: 34;
-}
-.orange[type=radio]:nth-child(11) {
-  --angle: 3deg;
-  --delay: 13s;
-  --scale: 0.93;
-  --translateX: 27cqi;
-  --beforeLeafX: 41;
-  --beforeLeafY: 28;
-  --afterLeafX: 21;
-  --afterLeafY: 26;
-}
-.orange[type=radio]:nth-child(12) {
-  --angle: 17deg;
-  --delay: 14s;
-  --scale: 0.878;
-  --translateX: -2cqi;
-  --beforeLeafX: 28;
-  --beforeLeafY: 14;
-  --afterLeafX: 45;
-  --afterLeafY: 12;
-}
-.orange[type=radio]:nth-child(13) {
-  --angle: -29deg;
-  --delay: 15s;
-  --scale: 0.972;
-  --translateX: 38cqi;
-  --beforeLeafX: 41;
-  --beforeLeafY: 18;
-  --afterLeafX: 49;
-  --afterLeafY: 22;
-}
-.orange[type=radio]:nth-child(14) {
-  --angle: 18deg;
-  --delay: 16s;
-  --scale: 0.864;
-  --translateX: -1cqi;
-  --beforeLeafX: 30;
-  --beforeLeafY: 25;
-  --afterLeafX: 44;
-  --afterLeafY: 50;
-}
-.orange[type=radio]:nth-child(15) {
-  --angle: -4deg;
-  --delay: 17s;
-  --scale: 0.866;
-  --translateX: -1cqi;
-  --beforeLeafX: 27;
-  --beforeLeafY: 37;
-  --afterLeafX: 46;
-  --afterLeafY: 26;
-}
-.orange[type=radio]:nth-child(16) {
-  --angle: -25deg;
-  --delay: 18s;
-  --scale: 0.842;
-  --translateX: 4cqi;
-  --beforeLeafX: 50;
-  --beforeLeafY: 2;
-  --afterLeafX: 21;
-  --afterLeafY: 19;
-}
-.orange[type=radio]:nth-child(17) {
-  --angle: 12deg;
-  --delay: 19s;
-  --scale: 0.804;
-  --translateX: 35cqi;
-  --beforeLeafX: 25;
-  --beforeLeafY: 48;
-  --afterLeafX: 33;
-  --afterLeafY: 41;
-}
-.orange[type=radio]:nth-child(18) {
-  --angle: 2deg;
-  --delay: 20s;
-  --scale: 0.994;
-  --translateX: 25cqi;
-  --beforeLeafX: 46;
-  --beforeLeafY: 33;
-  --afterLeafX: 45;
-  --afterLeafY: 20;
-}
-.orange[type=radio]:nth-child(19) {
-  --angle: -11deg;
-  --delay: 21s;
-  --scale: 0.93;
-  --translateX: -27cqi;
-  --beforeLeafX: 23;
-  --beforeLeafY: 39;
-  --afterLeafX: 28;
-  --afterLeafY: 30;
-}
-.orange[type=radio]:nth-child(20) {
-  --angle: 0deg;
-  --delay: 22s;
-  --scale: 0.958;
-  --translateX: 21cqi;
-  --beforeLeafX: 41;
-  --beforeLeafY: 33;
-  --afterLeafX: 37;
-  --afterLeafY: 6;
-}
-.orange[type=radio]:nth-child(21) {
-  --angle: -23deg;
-  --delay: 23s;
-  --scale: 0.802;
-  --translateX: -28cqi;
-  --beforeLeafX: 32;
-  --beforeLeafY: 47;
-  --afterLeafX: 26;
-  --afterLeafY: 34;
-}
-.orange[type=radio]:nth-child(22) {
-  --angle: 12deg;
-  --delay: 24s;
-  --scale: 0.948;
-  --translateX: 1cqi;
-  --beforeLeafX: 35;
-  --beforeLeafY: 32;
-  --afterLeafX: 28;
-  --afterLeafY: 14;
-}
-.orange[type=radio]:nth-child(23) {
-  --angle: 6deg;
-  --delay: 25s;
-  --scale: 0.832;
-  --translateX: 40cqi;
-  --beforeLeafX: 23;
-  --beforeLeafY: 44;
-  --afterLeafX: 40;
-  --afterLeafY: 14;
-}
-.orange[type=radio]:nth-child(24) {
-  --angle: 1deg;
-  --delay: 26s;
-  --scale: 0.954;
-  --translateX: 32cqi;
-  --beforeLeafX: 38;
-  --beforeLeafY: 24;
-  --afterLeafX: 31;
-  --afterLeafY: 35;
-}
-.orange[type=radio]:nth-child(25) {
-  --angle: 17deg;
-  --delay: 27s;
-  --scale: 0.84;
-  --translateX: 28cqi;
-  --beforeLeafX: 23;
-  --beforeLeafY: 26;
-  --afterLeafX: 39;
-  --afterLeafY: 12;
-}
-.orange[type=radio]:nth-child(26) {
-  --angle: 24deg;
-  --delay: 28s;
-  --scale: 0.872;
-  --translateX: 15cqi;
-  --beforeLeafX: 38;
-  --beforeLeafY: 49;
-  --afterLeafX: 24;
-  --afterLeafY: 39;
-}
-.orange[type=radio]:nth-child(27) {
-  --angle: -19deg;
-  --delay: 29s;
-  --scale: 0.922;
-  --translateX: -34cqi;
-  --beforeLeafX: 22;
-  --beforeLeafY: 41;
-  --afterLeafX: 48;
-  --afterLeafY: 33;
-}
-.orange[type=radio]:nth-child(28) {
-  --angle: 23deg;
-  --delay: 30s;
-  --scale: 0.872;
-  --translateX: -33cqi;
-  --beforeLeafX: 41;
-  --beforeLeafY: 25;
-  --afterLeafX: 31;
-  --afterLeafY: 6;
-}
-.orange[type=radio]:nth-child(29) {
-  --angle: 11deg;
-  --delay: 31s;
-  --scale: 0.822;
-  --translateX: -31cqi;
-  --beforeLeafX: 36;
-  --beforeLeafY: 7;
-  --afterLeafX: 26;
-  --afterLeafY: 11;
-}
-.orange[type=radio]:nth-child(30) {
-  --angle: 23deg;
-  --delay: 32s;
-  --scale: 0.998;
-  --translateX: -13cqi;
-  --beforeLeafX: 50;
-  --beforeLeafY: 21;
-  --afterLeafX: 47;
+  --scale: 0.95;
+  --translateX: -17cqi;
+  --beforeLeafX: 31;
+  --beforeLeafY: 12;
+  --afterLeafX: 32;
   --afterLeafY: 37;
 }
-.orange[type=radio]:nth-child(31) {
-  --angle: -22deg;
-  --delay: 33s;
-  --scale: 0.88;
-  --translateX: 29cqi;
-  --beforeLeafX: 46;
-  --beforeLeafY: 50;
-  --afterLeafX: 22;
-  --afterLeafY: 49;
-}
-.orange[type=radio]:nth-child(32) {
-  --angle: -18deg;
-  --delay: 34s;
-  --scale: 0.972;
-  --translateX: -22cqi;
+.orange[type=radio]:nth-child(7) {
+  --angle: -4deg;
+  --delay: 9s;
+  --scale: 0.856;
+  --translateX: -38cqi;
   --beforeLeafX: 39;
-  --beforeLeafY: 34;
-  --afterLeafX: 50;
+  --beforeLeafY: 16;
+  --afterLeafX: 25;
+  --afterLeafY: 42;
+}
+.orange[type=radio]:nth-child(8) {
+  --angle: 22deg;
+  --delay: 10s;
+  --scale: 0.94;
+  --translateX: -38cqi;
+  --beforeLeafX: 25;
+  --beforeLeafY: 25;
+  --afterLeafX: 32;
+  --afterLeafY: 41;
+}
+.orange[type=radio]:nth-child(9) {
+  --angle: -25deg;
+  --delay: 11s;
+  --scale: 0.806;
+  --translateX: 11cqi;
+  --beforeLeafX: 28;
+  --beforeLeafY: 28;
+  --afterLeafX: 30;
   --afterLeafY: 7;
 }
-.orange[type=radio]:nth-child(33) {
-  --angle: -13deg;
-  --delay: 35s;
-  --scale: 0.934;
-  --translateX: 33cqi;
+.orange[type=radio]:nth-child(10) {
+  --angle: 1deg;
+  --delay: 12s;
+  --scale: 0.888;
+  --translateX: 25cqi;
+  --beforeLeafX: 46;
+  --beforeLeafY: 27;
+  --afterLeafX: 29;
+  --afterLeafY: 8;
+}
+.orange[type=radio]:nth-child(11) {
+  --angle: 13deg;
+  --delay: 13s;
+  --scale: 0.952;
+  --translateX: 39cqi;
+  --beforeLeafX: 48;
+  --beforeLeafY: 13;
+  --afterLeafX: 22;
+  --afterLeafY: 5;
+}
+.orange[type=radio]:nth-child(12) {
+  --angle: 0deg;
+  --delay: 14s;
+  --scale: 0.808;
+  --translateX: 19cqi;
+  --beforeLeafX: 34;
+  --beforeLeafY: 31;
+  --afterLeafX: 39;
+  --afterLeafY: 26;
+}
+.orange[type=radio]:nth-child(13) {
+  --angle: -16deg;
+  --delay: 15s;
+  --scale: 0.97;
+  --translateX: -22cqi;
+  --beforeLeafX: 32;
+  --beforeLeafY: 38;
+  --afterLeafX: 49;
+  --afterLeafY: 2;
+}
+.orange[type=radio]:nth-child(14) {
+  --angle: -1deg;
+  --delay: 16s;
+  --scale: 0.988;
+  --translateX: -37cqi;
   --beforeLeafX: 40;
   --beforeLeafY: 16;
-  --afterLeafX: 45;
+  --afterLeafX: 46;
+  --afterLeafY: 34;
+}
+.orange[type=radio]:nth-child(15) {
+  --angle: -16deg;
+  --delay: 17s;
+  --scale: 0.942;
+  --translateX: 10cqi;
+  --beforeLeafX: 21;
+  --beforeLeafY: 18;
+  --afterLeafX: 34;
+  --afterLeafY: 5;
+}
+.orange[type=radio]:nth-child(16) {
+  --angle: 24deg;
+  --delay: 18s;
+  --scale: 0.894;
+  --translateX: -36cqi;
+  --beforeLeafX: 32;
+  --beforeLeafY: 32;
+  --afterLeafX: 34;
+  --afterLeafY: 7;
+}
+.orange[type=radio]:nth-child(17) {
+  --angle: 26deg;
+  --delay: 19s;
+  --scale: 0.988;
+  --translateX: -4cqi;
+  --beforeLeafX: 50;
+  --beforeLeafY: 18;
+  --afterLeafX: 50;
+  --afterLeafY: 48;
+}
+.orange[type=radio]:nth-child(18) {
+  --angle: -13deg;
+  --delay: 20s;
+  --scale: 0.86;
+  --translateX: -15cqi;
+  --beforeLeafX: 35;
+  --beforeLeafY: 37;
+  --afterLeafX: 50;
+  --afterLeafY: 43;
+}
+.orange[type=radio]:nth-child(19) {
+  --angle: 2deg;
+  --delay: 21s;
+  --scale: 0.966;
+  --translateX: 11cqi;
+  --beforeLeafX: 44;
+  --beforeLeafY: 32;
+  --afterLeafX: 33;
+  --afterLeafY: 39;
+}
+.orange[type=radio]:nth-child(20) {
+  --angle: -7deg;
+  --delay: 22s;
+  --scale: 0.918;
+  --translateX: 18cqi;
+  --beforeLeafX: 47;
+  --beforeLeafY: 16;
+  --afterLeafX: 35;
+  --afterLeafY: 33;
+}
+.orange[type=radio]:nth-child(21) {
+  --angle: 6deg;
+  --delay: 23s;
+  --scale: 0.978;
+  --translateX: 34cqi;
+  --beforeLeafX: 48;
+  --beforeLeafY: 33;
+  --afterLeafX: 31;
+  --afterLeafY: 14;
+}
+.orange[type=radio]:nth-child(22) {
+  --angle: 10deg;
+  --delay: 24s;
+  --scale: 0.882;
+  --translateX: -38cqi;
+  --beforeLeafX: 24;
+  --beforeLeafY: 27;
+  --afterLeafX: 36;
+  --afterLeafY: 8;
+}
+.orange[type=radio]:nth-child(23) {
+  --angle: 1deg;
+  --delay: 25s;
+  --scale: 0.832;
+  --translateX: -23cqi;
+  --beforeLeafX: 48;
+  --beforeLeafY: 13;
+  --afterLeafX: 49;
+  --afterLeafY: 41;
+}
+.orange[type=radio]:nth-child(24) {
+  --angle: -23deg;
+  --delay: 26s;
+  --scale: 0.998;
+  --translateX: -5cqi;
+  --beforeLeafX: 34;
+  --beforeLeafY: 28;
+  --afterLeafX: 34;
   --afterLeafY: 12;
 }
-.orange[type=radio]:nth-child(34) {
-  --angle: -29deg;
-  --delay: 36s;
-  --scale: 0.91;
-  --translateX: 23cqi;
-  --beforeLeafX: 47;
-  --beforeLeafY: 26;
-  --afterLeafX: 47;
+.orange[type=radio]:nth-child(25) {
+  --angle: -6deg;
+  --delay: 27s;
+  --scale: 0.956;
+  --translateX: -37cqi;
+  --beforeLeafX: 25;
+  --beforeLeafY: 31;
+  --afterLeafX: 34;
+  --afterLeafY: 43;
+}
+.orange[type=radio]:nth-child(26) {
+  --angle: 30deg;
+  --delay: 28s;
+  --scale: 0.922;
+  --translateX: 0cqi;
+  --beforeLeafX: 48;
+  --beforeLeafY: 17;
+  --afterLeafX: 28;
   --afterLeafY: 19;
 }
-.orange[type=radio]:nth-child(35) {
-  --angle: 18deg;
-  --delay: 37s;
-  --scale: 0.848;
-  --translateX: 33cqi;
-  --beforeLeafX: 36;
-  --beforeLeafY: 46;
-  --afterLeafX: 47;
+.orange[type=radio]:nth-child(27) {
+  --angle: 11deg;
+  --delay: 29s;
+  --scale: 0.99;
+  --translateX: 39cqi;
+  --beforeLeafX: 30;
+  --beforeLeafY: 9;
+  --afterLeafX: 28;
   --afterLeafY: 35;
+}
+.orange[type=radio]:nth-child(28) {
+  --angle: -15deg;
+  --delay: 30s;
+  --scale: 0.912;
+  --translateX: 14cqi;
+  --beforeLeafX: 46;
+  --beforeLeafY: 3;
+  --afterLeafX: 42;
+  --afterLeafY: 40;
+}
+.orange[type=radio]:nth-child(29) {
+  --angle: -6deg;
+  --delay: 31s;
+  --scale: 0.804;
+  --translateX: 29cqi;
+  --beforeLeafX: 26;
+  --beforeLeafY: 37;
+  --afterLeafX: 40;
+  --afterLeafY: 15;
+}
+.orange[type=radio]:nth-child(30) {
+  --angle: -6deg;
+  --delay: 32s;
+  --scale: 0.878;
+  --translateX: 3cqi;
+  --beforeLeafX: 21;
+  --beforeLeafY: 13;
+  --afterLeafX: 21;
+  --afterLeafY: 17;
+}
+.orange[type=radio]:nth-child(31) {
+  --angle: 11deg;
+  --delay: 33s;
+  --scale: 0.842;
+  --translateX: 36cqi;
+  --beforeLeafX: 23;
+  --beforeLeafY: 31;
+  --afterLeafX: 37;
+  --afterLeafY: 16;
+}
+.orange[type=radio]:nth-child(32) {
+  --angle: 18deg;
+  --delay: 34s;
+  --scale: 0.84;
+  --translateX: -14cqi;
+  --beforeLeafX: 44;
+  --beforeLeafY: 9;
+  --afterLeafX: 40;
+  --afterLeafY: 50;
+}
+.orange[type=radio]:nth-child(33) {
+  --angle: -10deg;
+  --delay: 35s;
+  --scale: 0.974;
+  --translateX: 35cqi;
+  --beforeLeafX: 41;
+  --beforeLeafY: 38;
+  --afterLeafX: 44;
+  --afterLeafY: 45;
+}
+.orange[type=radio]:nth-child(34) {
+  --angle: 25deg;
+  --delay: 36s;
+  --scale: 0.818;
+  --translateX: 14cqi;
+  --beforeLeafX: 36;
+  --beforeLeafY: 36;
+  --afterLeafX: 34;
+  --afterLeafY: 39;
+}
+.orange[type=radio]:nth-child(35) {
+  --angle: -3deg;
+  --delay: 37s;
+  --scale: 0.864;
+  --translateX: -18cqi;
+  --beforeLeafX: 40;
+  --beforeLeafY: 16;
+  --afterLeafX: 22;
+  --afterLeafY: 24;
 }
 .orange:checked {
   counter-increment: score oranges;
@@ -714,204 +715,204 @@ h1 {
   inset: -5cqi;
 }
 .apple[type=radio]:nth-child(1) {
-  --angle: 15deg;
-  --delay: 4.25s;
-  --scale: 0.998;
-  --translateX: -34cqi;
-  --beforeLeafX: 24;
-  --beforeLeafY: 33;
-  --afterLeafX: 27;
-  --afterLeafY: 47;
-}
-.apple[type=radio]:nth-child(2) {
   --angle: -23deg;
-  --delay: 5.5s;
-  --scale: 0.922;
-  --translateX: -20cqi;
-  --beforeLeafX: 25;
-  --beforeLeafY: 31;
-  --afterLeafX: 25;
-  --afterLeafY: 30;
-}
-.apple[type=radio]:nth-child(3) {
-  --angle: 2deg;
-  --delay: 6.75s;
-  --scale: 0.958;
+  --delay: 4.25s;
+  --scale: 0.954;
   --translateX: -17cqi;
-  --beforeLeafX: 28;
-  --beforeLeafY: 9;
-  --afterLeafX: 45;
-  --afterLeafY: 5;
-}
-.apple[type=radio]:nth-child(4) {
-  --angle: 4deg;
-  --delay: 8s;
-  --scale: 0.846;
-  --translateX: -25cqi;
-  --beforeLeafX: 35;
-  --beforeLeafY: 50;
-  --afterLeafX: 41;
-  --afterLeafY: 39;
-}
-.apple[type=radio]:nth-child(5) {
-  --angle: 7deg;
-  --delay: 9.25s;
-  --scale: 0.986;
-  --translateX: 21cqi;
-  --beforeLeafX: 41;
-  --beforeLeafY: 31;
-  --afterLeafX: 45;
+  --beforeLeafX: 22;
+  --beforeLeafY: 28;
+  --afterLeafX: 48;
   --afterLeafY: 50;
 }
+.apple[type=radio]:nth-child(2) {
+  --angle: 17deg;
+  --delay: 5.5s;
+  --scale: 0.998;
+  --translateX: -2cqi;
+  --beforeLeafX: 46;
+  --beforeLeafY: 15;
+  --afterLeafX: 43;
+  --afterLeafY: 23;
+}
+.apple[type=radio]:nth-child(3) {
+  --angle: -3deg;
+  --delay: 6.75s;
+  --scale: 0.856;
+  --translateX: -31cqi;
+  --beforeLeafX: 34;
+  --beforeLeafY: 30;
+  --afterLeafX: 27;
+  --afterLeafY: 33;
+}
+.apple[type=radio]:nth-child(4) {
+  --angle: 27deg;
+  --delay: 8s;
+  --scale: 0.814;
+  --translateX: -17cqi;
+  --beforeLeafX: 42;
+  --beforeLeafY: 33;
+  --afterLeafX: 22;
+  --afterLeafY: 46;
+}
+.apple[type=radio]:nth-child(5) {
+  --angle: 18deg;
+  --delay: 9.25s;
+  --scale: 0.804;
+  --translateX: -30cqi;
+  --beforeLeafX: 46;
+  --beforeLeafY: 12;
+  --afterLeafX: 22;
+  --afterLeafY: 20;
+}
 .apple[type=radio]:nth-child(6) {
-  --angle: -21deg;
+  --angle: 19deg;
   --delay: 10.5s;
-  --scale: 0.81;
-  --translateX: -39cqi;
-  --beforeLeafX: 27;
-  --beforeLeafY: 6;
-  --afterLeafX: 48;
-  --afterLeafY: 44;
+  --scale: 0.886;
+  --translateX: -35cqi;
+  --beforeLeafX: 34;
+  --beforeLeafY: 5;
+  --afterLeafX: 35;
+  --afterLeafY: 28;
 }
 .apple[type=radio]:nth-child(7) {
-  --angle: 10deg;
+  --angle: -7deg;
   --delay: 11.75s;
-  --scale: 0.84;
-  --translateX: -14cqi;
-  --beforeLeafX: 44;
-  --beforeLeafY: 28;
-  --afterLeafX: 21;
-  --afterLeafY: 48;
-}
-.apple[type=radio]:nth-child(8) {
-  --angle: -10deg;
-  --delay: 13s;
-  --scale: 0.83;
-  --translateX: 23cqi;
-  --beforeLeafX: 43;
-  --beforeLeafY: 26;
-  --afterLeafX: 21;
+  --scale: 0.94;
+  --translateX: 40cqi;
+  --beforeLeafX: 49;
+  --beforeLeafY: 14;
+  --afterLeafX: 30;
   --afterLeafY: 39;
 }
-.apple[type=radio]:nth-child(9) {
-  --angle: -11deg;
-  --delay: 14.25s;
-  --scale: 0.946;
-  --translateX: -9cqi;
-  --beforeLeafX: 43;
-  --beforeLeafY: 29;
-  --afterLeafX: 24;
-  --afterLeafY: 10;
-}
-.apple[type=radio]:nth-child(10) {
-  --angle: -29deg;
-  --delay: 15.5s;
-  --scale: 0.83;
-  --translateX: 14cqi;
-  --beforeLeafX: 25;
-  --beforeLeafY: 2;
-  --afterLeafX: 22;
-  --afterLeafY: 15;
-}
-.apple[type=radio]:nth-child(11) {
-  --angle: 8deg;
-  --delay: 16.75s;
-  --scale: 0.836;
-  --translateX: 33cqi;
-  --beforeLeafX: 44;
-  --beforeLeafY: 45;
-  --afterLeafX: 33;
-  --afterLeafY: 22;
-}
-.apple[type=radio]:nth-child(12) {
-  --angle: 26deg;
-  --delay: 18s;
-  --scale: 0.852;
-  --translateX: 4cqi;
-  --beforeLeafX: 33;
-  --beforeLeafY: 47;
-  --afterLeafX: 22;
-  --afterLeafY: 16;
-}
-.apple[type=radio]:nth-child(13) {
-  --angle: -10deg;
-  --delay: 19.25s;
-  --scale: 0.912;
-  --translateX: -5cqi;
-  --beforeLeafX: 36;
-  --beforeLeafY: 28;
+.apple[type=radio]:nth-child(8) {
+  --angle: -24deg;
+  --delay: 13s;
+  --scale: 0.984;
+  --translateX: -29cqi;
+  --beforeLeafX: 46;
+  --beforeLeafY: 23;
   --afterLeafX: 34;
-  --afterLeafY: 13;
+  --afterLeafY: 30;
 }
-.apple[type=radio]:nth-child(14) {
-  --angle: 3deg;
-  --delay: 20.5s;
-  --scale: 0.806;
-  --translateX: 4cqi;
-  --beforeLeafX: 34;
-  --beforeLeafY: 28;
-  --afterLeafX: 38;
-  --afterLeafY: 40;
-}
-.apple[type=radio]:nth-child(15) {
-  --angle: 0deg;
-  --delay: 21.75s;
-  --scale: 0.94;
-  --translateX: 17cqi;
-  --beforeLeafX: 40;
-  --beforeLeafY: 42;
-  --afterLeafX: 37;
-  --afterLeafY: 47;
-}
-.apple[type=radio]:nth-child(16) {
-  --angle: 28deg;
-  --delay: 23s;
-  --scale: 0.98;
-  --translateX: -15cqi;
+.apple[type=radio]:nth-child(9) {
+  --angle: 12deg;
+  --delay: 14.25s;
+  --scale: 0.88;
+  --translateX: 11cqi;
   --beforeLeafX: 50;
   --beforeLeafY: 21;
-  --afterLeafX: 43;
-  --afterLeafY: 36;
+  --afterLeafX: 44;
+  --afterLeafY: 21;
 }
-.apple[type=radio]:nth-child(17) {
-  --angle: 19deg;
-  --delay: 24.25s;
-  --scale: 0.81;
-  --translateX: 33cqi;
-  --beforeLeafX: 28;
-  --beforeLeafY: 41;
-  --afterLeafX: 23;
-  --afterLeafY: 22;
+.apple[type=radio]:nth-child(10) {
+  --angle: -13deg;
+  --delay: 15.5s;
+  --scale: 1;
+  --translateX: -21cqi;
+  --beforeLeafX: 29;
+  --beforeLeafY: 45;
+  --afterLeafX: 24;
+  --afterLeafY: 43;
 }
-.apple[type=radio]:nth-child(18) {
-  --angle: -8deg;
-  --delay: 25.5s;
-  --scale: 0.846;
-  --translateX: 10cqi;
-  --beforeLeafX: 49;
-  --beforeLeafY: 2;
-  --afterLeafX: 35;
+.apple[type=radio]:nth-child(11) {
+  --angle: -19deg;
+  --delay: 16.75s;
+  --scale: 0.822;
+  --translateX: 31cqi;
+  --beforeLeafX: 46;
+  --beforeLeafY: 19;
+  --afterLeafX: 25;
+  --afterLeafY: 50;
+}
+.apple[type=radio]:nth-child(12) {
+  --angle: -12deg;
+  --delay: 18s;
+  --scale: 0.89;
+  --translateX: -7cqi;
+  --beforeLeafX: 29;
+  --beforeLeafY: 27;
+  --afterLeafX: 31;
   --afterLeafY: 3;
 }
+.apple[type=radio]:nth-child(13) {
+  --angle: 15deg;
+  --delay: 19.25s;
+  --scale: 0.92;
+  --translateX: 34cqi;
+  --beforeLeafX: 31;
+  --beforeLeafY: 2;
+  --afterLeafX: 48;
+  --afterLeafY: 20;
+}
+.apple[type=radio]:nth-child(14) {
+  --angle: 24deg;
+  --delay: 20.5s;
+  --scale: 0.942;
+  --translateX: 33cqi;
+  --beforeLeafX: 24;
+  --beforeLeafY: 43;
+  --afterLeafX: 49;
+  --afterLeafY: 10;
+}
+.apple[type=radio]:nth-child(15) {
+  --angle: 1deg;
+  --delay: 21.75s;
+  --scale: 0.85;
+  --translateX: -17cqi;
+  --beforeLeafX: 33;
+  --beforeLeafY: 7;
+  --afterLeafX: 36;
+  --afterLeafY: 28;
+}
+.apple[type=radio]:nth-child(16) {
+  --angle: 12deg;
+  --delay: 23s;
+  --scale: 0.802;
+  --translateX: -24cqi;
+  --beforeLeafX: 27;
+  --beforeLeafY: 3;
+  --afterLeafX: 21;
+  --afterLeafY: 34;
+}
+.apple[type=radio]:nth-child(17) {
+  --angle: -26deg;
+  --delay: 24.25s;
+  --scale: 0.962;
+  --translateX: 11cqi;
+  --beforeLeafX: 37;
+  --beforeLeafY: 31;
+  --afterLeafX: 29;
+  --afterLeafY: 7;
+}
+.apple[type=radio]:nth-child(18) {
+  --angle: 10deg;
+  --delay: 25.5s;
+  --scale: 0.824;
+  --translateX: -10cqi;
+  --beforeLeafX: 49;
+  --beforeLeafY: 33;
+  --afterLeafX: 22;
+  --afterLeafY: 39;
+}
 .apple[type=radio]:nth-child(19) {
-  --angle: 20deg;
+  --angle: -25deg;
   --delay: 26.75s;
-  --scale: 0.886;
-  --translateX: -12cqi;
-  --beforeLeafX: 28;
-  --beforeLeafY: 49;
-  --afterLeafX: 30;
-  --afterLeafY: 49;
+  --scale: 0.824;
+  --translateX: 25cqi;
+  --beforeLeafX: 44;
+  --beforeLeafY: 31;
+  --afterLeafX: 26;
+  --afterLeafY: 27;
 }
 .apple[type=radio]:nth-child(20) {
-  --angle: 13deg;
+  --angle: -14deg;
   --delay: 28s;
-  --scale: 0.988;
-  --translateX: 38cqi;
-  --beforeLeafX: 36;
-  --beforeLeafY: 39;
-  --afterLeafX: 28;
-  --afterLeafY: 25;
+  --scale: 0.96;
+  --translateX: 30cqi;
+  --beforeLeafX: 42;
+  --beforeLeafY: 16;
+  --afterLeafX: 46;
+  --afterLeafY: 40;
 }
 .apple:checked {
   counter-increment: score -2 apples;
